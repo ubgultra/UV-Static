@@ -25,7 +25,33 @@
          <img src="logo.jpg" alt="Logo">
       </div>
       <div id="content">
-         <h1>The newest unblocker yet!</h1>
+         const allFacts = {
+  "parrot": [
+    "Parrots can talk.",
+    "Parrots love sunflower seeds.",
+    "Parrots can make your day."
+  ],
+  "lion": [
+    "Lion can't talk.",
+    "Lion is a part of cat family.",
+    "Lion is the King of the Jungle."
+  ],
+  "rabbit": [
+    "Rabbit can't talk.",
+    "Rabbits are cute.",
+    "Rabbits are small."
+  ]
+}
+
+function displayRandomMessage(animalType) {
+  var facts = allFacts[animalType]
+  var randomIndex = Math.floor(Math.random() * facts.length);
+  var randomMessage = facts[randomIndex];
+  var messageElement = document.getElementById(animalType + "Fact");
+  messageElement.innerHTML = randomMessage;
+}
+
+displayRandomMessage("lion")
 
          <form id="uv-form"">
             <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
